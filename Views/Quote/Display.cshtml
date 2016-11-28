@@ -1,0 +1,38 @@
+<html>
+<head>
+	<title>All Quotes</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">
+     <link href="https://fonts.googleapis.com/css?family=Pacifico|Roboto+Slab" rel="stylesheet">
+</head>
+<body>
+     <div class="mainbg2"></div>
+	<h2 class="heading2">Here are some of the Awesome Quotes</h2>
+    <div class="movequote">
+         @{
+        foreach(var Current in ViewBag.quotes){
+                <div class="col-lg-8 col-lg-offset-1 col-md-4 col-md-offset-4 thumbnail">
+                <div class="form-group col-md-11">
+            <p class="quote">"@Current.quote"</p>
+            <p class="namemove">@Current.user at @Current.created_at</p>
+            <form action="/like" method="post">
+                    <input type="hidden" name="id" value=@Current.id>
+                     <span>Likes : @Current.likes</span>
+                     <button class= "likebutton" type="submit">
+                        <span class="glyphicon glyphicon-thumbs-up"></span>
+                        <span class="submit-text">Like</span>
+                    </button>
+            </form>
+                </div>
+                </div>
+                    }
+    }
+            </div>
+            <br>
+            <center><button class="quoteadd"><a href='/' class="quotelink"><span class="glyphicon glyphicon-pencil"></span>Add Your Favourite Quote</a></button></center>
+</body>
+</html>
