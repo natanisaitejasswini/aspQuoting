@@ -50,7 +50,7 @@ namespace aspQuoting.Controllers
             return RedirectToAction("Index");
         }
         [HttpGet]
-        [Route("quotes")]
+        [Route("quote")]
         public IActionResult DisplayQuotes()
         {
             ViewBag.quotes = quoteFactory.FindAll();
