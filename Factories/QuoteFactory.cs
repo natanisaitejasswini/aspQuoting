@@ -13,7 +13,7 @@ namespace DapperApp.Factory
         private string connectionString;
         public QuoteRepository()
         {
-            connectionString = "server=54.213.234.106;userid=remote1;password=password;port=3306;database=quoteDB;SslMode=None";
+            connectionString = "server=54.213.222.125;userid=remote;password=password;port=3306;database=quoteDB;SslMode=None";
         }
 
         internal IDbConnection Connection
